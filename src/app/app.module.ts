@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { CryptoHODLScreenComponent } from './crypto-hodlscreen/crypto-hodlscreen.component';
 import { WalletOverviewComponent } from './crypto-hodlscreen/wallet-overview/wallet-overview.component';
 import { ReportTransactionOverviewComponent } from './crypto-hodlscreen/report-transaction-overview/report-transaction-overview.component';
+import { CryptoTransactionsComponent } from './crypto-hodlscreen/crypto-transactions/crypto-transactions.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CryptoHODLScreenComponent,
     WalletOverviewComponent,
-    ReportTransactionOverviewComponent
+    ReportTransactionOverviewComponent,
+    CryptoTransactionsComponent
   ],
   imports: [
     BrowserAnimationsModule,

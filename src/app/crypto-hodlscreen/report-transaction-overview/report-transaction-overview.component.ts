@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Transaction } from '../crypto.model';
+import { ReportEntry } from '../crypto.model';
 
 @Component({
   selector: 'app-report-transaction-overview',
@@ -9,7 +9,7 @@ import { Transaction } from '../crypto.model';
 export class ReportTransactionOverviewComponent {
 
   displayedColumns = ['Value', 'Asset', 'InDate', 'OutDate'];
-  reportTransactions: Transaction[] = [{
+  reportTransactions: ReportEntry[] = [{
     "Value": 10,
     "Asset": "BTC",
     "InDate": "04/04/2020",
