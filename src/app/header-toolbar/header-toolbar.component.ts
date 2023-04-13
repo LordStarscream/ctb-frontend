@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header-toolbar.component.scss']
 })
 export class HeaderToolbarComponent implements OnInit {
+  opened=false;
 
   constructor() { }
 
