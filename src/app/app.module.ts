@@ -1,29 +1,46 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CommonModule } from '@angular/common';
-import { MatExpansionModule } from '@angular/material/expansion';
-import { MatTableModule } from '@angular/material/table';
+import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CryptoHODLScreenComponent } from './crypto-hodlscreen/crypto-hodlscreen.component';
-import { WalletOverviewComponent } from './crypto-hodlscreen/wallet-overview/wallet-overview.component';
-import { ReportTransactionOverviewComponent } from './crypto-hodlscreen/report-transaction-overview/report-transaction-overview.component';
-import { CryptoTransactionsComponent } from './crypto-hodlscreen/crypto-transactions/crypto-transactions.component';
+import { HeaderToolbarComponent } from './header-toolbar/header-toolbar.component';
+import { HoddlLayoutComponent } from './layout/hoddl-layout/hoddl-layout.component';
+import { HoddlWalletViewComponent } from './hoddl/hoddl-wallet-view/hoddl-wallet-view.component';
+import { HoddlTransactionsComponent } from './hoddl/hoddl-transactions/hoddl-transactions.component';
+import { HoddlReportTransactionsComponent } from './hoddl/hoddl-report-transactions/hoddl-report-transactions.component';
+import { ForexTradeLayoutComponent } from './layout/forex-trade-layout/forex-trade-layout.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule} from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from  '@angular/material/list';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    CryptoHODLScreenComponent,
-    WalletOverviewComponent,
-    ReportTransactionOverviewComponent,
-    CryptoTransactionsComponent
+    HeaderToolbarComponent,
+    HoddlLayoutComponent,
+    HoddlWalletViewComponent,
+    HoddlTransactionsComponent,
+    HoddlReportTransactionsComponent,
+    ForexTradeLayoutComponent
   ],
   imports: [
-    BrowserAnimationsModule,
     BrowserModule,
-    CommonModule,
-    MatExpansionModule,
-    MatTableModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatButtonModule,
+    MatIconModule,
+    MatCardModule,
+    MatMenuModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
