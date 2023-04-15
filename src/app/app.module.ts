@@ -37,7 +37,6 @@ import { DefaultModule } from './layouts/default/default.module';
     MatTableModule,
     MatNativeDateModule,
     MatExpansionModule
-
   ],
   providers: [],
   bootstrap: [AppComponent]
