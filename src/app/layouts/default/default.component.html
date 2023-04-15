@@ -1,7 +1,7 @@
-<app-header (toggleSideBarForMe)="sideBarToggler()"></app-header>
+<app-header (toggleSideDrawer)="togglSideDrawer()"></app-header>
 
-<mat-drawer-container>
-  <mat-drawer mode="side" [opened]="sideBarOpen">
+<mat-drawer-container (backdropClick)="close('backdrop')">
+  <mat-drawer #drawer (keydown.escape)="close('escape')" disableClose>
     <app-sidebar></app-sidebar>
   </mat-drawer>
 

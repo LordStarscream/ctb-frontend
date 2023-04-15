@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { MatDrawer } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-default',
@@ -7,9 +8,19 @@ import { Component } from '@angular/core';
 })
 export class DefaultComponent {
 
-  sideBarOpen = false;
+  @ViewChild('drawer') drawer!: MatDrawer;
 
-  sideBarToggler(){
-    this.sideBarOpen = !this.sideBarOpen;
+  reason = '';
+
+  close(reason: string){
+    this.drawer.close();
+    this.reason = reason;
+  }
+
+  togglSideDrawer(){
+    if (this.drawer.opened)
+      this.close("Button");
+    else
+      this.drawer.open();
   }
 }
