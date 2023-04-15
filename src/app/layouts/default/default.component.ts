@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class DefaultComponent {
 
+  sideBarOpen = false;
+
+  sideBarToggler(){
+    this.sideBarOpen = !this.sideBarOpen;
+  }
 }
