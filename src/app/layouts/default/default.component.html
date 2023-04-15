@@ -1,7 +1,7 @@
 <app-header (toggleSideDrawer)="togglSideDrawer()"></app-header>
 
 <mat-drawer-container (backdropClick)="close('backdrop')">
-  <mat-drawer #drawer (keydown.escape)="close('escape')" disableClose>
+  <mat-drawer #drawer (keydown.escape)="close('escape')" mode="side" disableClose>
     <app-sidebar></app-sidebar>
   </mat-drawer>
 

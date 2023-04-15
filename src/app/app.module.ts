@@ -13,10 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from  '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
-import { MatNativeDateModule } from '@angular/material/core';
-import { MatExpansionModule } from '@angular/material/expansion';
 import { DefaultModule } from './layouts/default/default.module';
-
 @NgModule({
   declarations: [
     AppComponent
@@ -34,9 +31,7 @@ import { DefaultModule } from './layouts/default/default.module';
     MatCardModule,
     MatMenuModule,
     FormsModule,
-    MatTableModule,
-    MatNativeDateModule,
-    MatExpansionModule
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,38 @@
+<mat-accordion *ngFor="let overview of walletOverview">
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{overview.Currency}}
+      </mat-panel-title>
+      <mat-panel-description>
+        {{overview.Value}} {{overview.Ticker}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div *ngFor="let wallet of overview.Wallets">
+      <p>{{wallet.Name}} Summe: {{wallet.Value}} in Fiat: {{wallet.FiatValue}}</p>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>
+
+
+<!--
+  <table mat-table [dataSource]="reportTransactions" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="Value">
+    <th mat-header-cell *matHeaderCellDef> Menge </th>
+    <td mat-cell *matCellDef="let row"> {{ row.Value }} </td>
+  </ng-container>
+  <ng-container matColumnDef="Asset">
+    <th mat-header-cell *matHeaderCellDef> Asset </th>
+    <td mat-cell *matCellDef="let row"> {{ row.Asset }} </td>
+  </ng-container>
+  <ng-container matColumnDef="InDate">
+    <th mat-header-cell *matHeaderCellDef> Kauf </th>
+    <td mat-cell *matCellDef="let row"> {{ row.InDate }} </td>
+  </ng-container>
+  <ng-container matColumnDef="OutDate">
+    <th mat-header-cell *matHeaderCellDef> Verkauf </th>
+    <td mat-cell *matCellDef="let row"> {{ row.OutDate }} </td>
+  </ng-container>
+
+-->
