@@ -1,0 +1,31 @@
+.container{
+  display: flex;
+  flex-direction: row;
+}
+
+.content-area {
+  /* Add your desired styles for the content area */
+  flex: 3;
+  padding-left: 10%;
+
+}
+
+.button-area {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* Add your desired styles for the button area */
+}
+.button-container {
+  display: flex;
+  flex-direction: column;
+  //justify-content: flex-start;
+  align-items: flex-start;
+  align-self: flex-start;
+}
+
+.button-container button {
+  margin-bottom: 10px;
+}
