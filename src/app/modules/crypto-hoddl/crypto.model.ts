@@ -34,6 +34,14 @@ export interface Transaction {
   Worth: string
 }
 
+export interface ImportTransaction {
+  Date: string,
+  Type: string,
+  Wallet: string,
+  In: string,
+  Out: string
+}
+
 export enum TransactionType{
   Buy,
   Sell,
