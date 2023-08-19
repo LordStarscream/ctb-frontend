@@ -10,10 +10,12 @@ import { CryptoHoddlComponent } from 'src/app/modules/crypto-hoddl/crypto-hoddl.
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatIconModule } from '@angular/material/icon';
 import { CryptoWalletViewComponent } from 'src/app/modules/crypto-hoddl/crypto-wallet-view/crypto-wallet-view.component';
 import { CryptoTransactionViewComponent } from 'src/app/modules/crypto-hoddl/crypto-transaction-view/crypto-transaction-view.component';
 import { CryptoReportViewComponent } from 'src/app/modules/crypto-hoddl/crypto-report-view/crypto-report-view.component';
 import { CryptoImportEntryComponent } from 'src/app/modules/crypto-hoddl/crypto-import-entry/crypto-import-entry.component';
+import { CryptoFileImportComponent } from 'src/app/modules/crypto-hoddl/crypto-file-import/crypto-file-import.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { CryptoImportEntryComponent } from 'src/app/modules/crypto-hoddl/crypto-
     CryptoWalletViewComponent,
     CryptoTransactionViewComponent,
     CryptoReportViewComponent,
-    CryptoImportEntryComponent
+    CryptoImportEntryComponent,
+    CryptoFileImportComponent
   ],
   imports: [
     CommonModule,
@@ -33,7 +36,8 @@ import { CryptoImportEntryComponent } from 'src/app/modules/crypto-hoddl/crypto-
     MatDividerModule,
     MatNativeDateModule,
     MatExpansionModule,
-    MatTableModule
+    MatTableModule,
+    MatIconModule
   ]
 })
 export class DefaultModule { }
