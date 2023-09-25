@@ -16,6 +16,7 @@ import { CryptoTransactionViewComponent } from 'src/app/modules/crypto-hoddl/cry
 import { CryptoReportViewComponent } from 'src/app/modules/crypto-hoddl/crypto-report-view/crypto-report-view.component';
 import { CryptoImportEntryComponent } from 'src/app/modules/crypto-hoddl/crypto-import-entry/crypto-import-entry.component';
 import { CryptoFileImportComponent } from 'src/app/modules/crypto-hoddl/crypto-file-import/crypto-file-import.component';
+import { FileImportComponent } from 'src/app/modules/file-import/file-import.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CryptoFileImportComponent } from 'src/app/modules/crypto-hoddl/crypto-f
     CryptoTransactionViewComponent,
     CryptoReportViewComponent,
     CryptoImportEntryComponent,
-    CryptoFileImportComponent
+    CryptoFileImportComponent,
+    FileImportComponent
   ],
   imports: [
     CommonModule,

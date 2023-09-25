@@ -8,7 +8,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CryptoFileImportComponent {
   fileName = '';
-
+  onFileSelected(event: any) {
+    const file: File = event.target.files[0];
+    if (file) {
+      // Hier kannst du die ausgewählte Datei verwenden, z.B. für die Anzeige im UI oder für den Upload
+    }
+  }
+  /*
     constructor(private http: HttpClient) {}
 
     onFileSelected(event) {
@@ -28,4 +34,5 @@ export class CryptoFileImportComponent {
             upload$.subscribe();
         }
     }
+    */
 }
