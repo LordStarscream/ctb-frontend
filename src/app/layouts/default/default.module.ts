@@ -17,6 +17,8 @@ import { CryptoReportViewComponent } from 'src/app/modules/crypto-hoddl/crypto-r
 import { CryptoImportEntryComponent } from 'src/app/modules/crypto-hoddl/crypto-import-entry/crypto-import-entry.component';
 import { CryptoFileImportComponent } from 'src/app/modules/crypto-hoddl/crypto-file-import/crypto-file-import.component';
 import { FileImportComponent } from 'src/app/modules/file-import/file-import.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { FileImportComponent } from 'src/app/modules/file-import/file-import.com
     FileImportComponent
   ],
   imports: [
+    BrowserModule,
+    FormsModule,
     CommonModule,
     RouterModule,
     SharedModule,

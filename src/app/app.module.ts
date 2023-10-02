@@ -23,6 +23,7 @@ import { DefaultModule } from './layouts/default/default.module';
     DefaultModule,
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MatToolbarModule,
     MatSidenavModule,
