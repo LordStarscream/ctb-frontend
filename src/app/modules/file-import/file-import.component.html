@@ -1,11 +1,3 @@
-<!--
-<p>file-import works!</p>
-<input type="file" class="file-upload" onchange="console.log(event.target.files)">
-<input type="file" class="file-input"
-       (change)="onFileSelected($event)" #fileUpload>
--->
-<!--input type="file" class="file-input"
-       (change)="onFileSelected($event)" #fileUpload -->
 <div>
   <label for="uploadedType">Upload Type:</label>
   <select id="uploadType" [(ngModel)]="selectedUploadType">
@@ -16,13 +8,22 @@
 <div class="file-upload">
   <input type="file" (change)="onFileSelected($event)" #fileUpload style="display: none;">
     <button mat-mini-fab color="primary" class="upload-btn"
-      (click)="fileUpload.click()">
-        <mat-icon>attach_file</mat-icon>
-    </button>
+      (click)="fileUpload.click()">Select File..</button>
 </div>
 
 <div>
   {{fileName || "No file uploaded yet."}}
 </div>
 
-<button mat-raised-button color="primary" (click)="uploadFile()">Upload</button>
+<div>
+  <button mat-raised-button color="primary" (click)="uploadFile()">Upload</button>
+</div>
+
+<div class="import-transaction">
+  <p><mat-checkbox [(ngModel)]="checkboxAutoRate">auto calculate changerate</mat-checkbox></p>
+  <p><button mat-raised-button color="primary" (click)="importTrades()">Import Trades</button></p>
+</div>
+
+<div class="import-entries">
+  <app-import-entry></app-import-entry>
+</div>

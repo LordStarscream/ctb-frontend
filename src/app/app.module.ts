@@ -14,6 +14,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from  '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { DefaultModule } from './layouts/default/default.module';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { DefaultModule } from './layouts/default/default.module';
     MatCardModule,
     MatMenuModule,
     FormsModule,
-    MatTableModule
+    MatTableModule,
+    MatSnackBarModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CryptoImportEntryComponent } from './crypto-import-entry.component';
+import { ImportEntryComponent } from './import-entry.component';
 
 describe('CryptoReportComponent', () => {
-  let component: CryptoImportEntryComponent;
-  let fixture: ComponentFixture<CryptoImportEntryComponent>;
+  let component: ImportEntryComponent;
+  let fixture: ComponentFixture<ImportEntryComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CryptoImportEntryComponent ]
+      declarations: [ ImportEntryComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CryptoImportEntryComponent);
+    fixture = TestBed.createComponent(ImportEntryComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

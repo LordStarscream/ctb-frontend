@@ -14,11 +14,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { CryptoWalletViewComponent } from 'src/app/modules/crypto-hoddl/crypto-wallet-view/crypto-wallet-view.component';
 import { CryptoTransactionViewComponent } from 'src/app/modules/crypto-hoddl/crypto-transaction-view/crypto-transaction-view.component';
 import { CryptoReportViewComponent } from 'src/app/modules/crypto-hoddl/crypto-report-view/crypto-report-view.component';
-import { CryptoImportEntryComponent } from 'src/app/modules/crypto-hoddl/crypto-import-entry/crypto-import-entry.component';
-import { CryptoFileImportComponent } from 'src/app/modules/crypto-hoddl/crypto-file-import/crypto-file-import.component';
+import { ImportEntryComponent } from 'src/app/modules/file-import/import-entry/import-entry.component';
 import { FileImportComponent } from 'src/app/modules/file-import/file-import.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -28,8 +28,7 @@ import { FormsModule } from '@angular/forms';
     CryptoWalletViewComponent,
     CryptoTransactionViewComponent,
     CryptoReportViewComponent,
-    CryptoImportEntryComponent,
-    CryptoFileImportComponent,
+    ImportEntryComponent,
     FileImportComponent
   ],
   imports: [
@@ -43,7 +42,8 @@ import { FormsModule } from '@angular/forms';
     MatNativeDateModule,
     MatExpansionModule,
     MatTableModule,
-    MatIconModule
+    MatIconModule,
+    MatCheckboxModule
   ]
 })
 export class DefaultModule { }

@@ -1,12 +1,16 @@
 import { environment } from './../../../environment';
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { TransactionImport } from 'src/app/modules/models/transaction-import.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FileImportService {
+
+  contantUpdate = new EventEmitter<void>();
 
   private apiUrl = environment.apiUrl;
 
@@ -25,6 +29,18 @@ export class FileImportService {
     const headers = new HttpHeaders();
 
     return this.http.post(`${this.apiUrl}/file/import`, formData, { headers });
+  }
 
+  getImportTransactions(): Observable<TransactionImport[]> {
+    const url = `${this.apiUrl}/file/transactionImports`;
+    return  this.http.get<TransactionImport[]>(url).pipe(
+      map((data: any[]) => {
+        // Konvertieren Sie das dateTime-Feld in Date-Objekte
+        return data.map(item => {
+          item.date = TransactionImport.convertToLocalDate(item.dateTime);
+          return item;
+        });
+      })
+    );
   }
 }

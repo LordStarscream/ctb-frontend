@@ -1,6 +1,5 @@
 import { CryptoHoddlComponent } from './modules/crypto-hoddl/crypto-hoddl.component';
-import { CryptoImportEntryComponent } from './modules/crypto-hoddl/crypto-import-entry/crypto-import-entry.component';
-import { CryptoFileImportComponent } from './modules/crypto-hoddl/crypto-file-import/crypto-file-import.component';
+import { ImportEntryComponent } from './modules/file-import/import-entry/import-entry.component';
 import { FileImportComponent } from './modules/file-import/file-import.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -23,15 +22,11 @@ const routes: Routes = [
       },
       {
         path: 'report',
-        component: CryptoImportEntryComponent
+        component: ImportEntryComponent
       },
       {
         path: 'fileImport',
         component: FileImportComponent
-      },
-      {
-        path: 'fileUpload',
-        component: CryptoFileImportComponent
       }
     ]
   }
