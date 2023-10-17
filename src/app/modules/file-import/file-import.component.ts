@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FileImportService } from '../services/file-import.service';
+import { TransactionImportService } from '../services/transaction-import.service';
 import { Subscription } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -9,7 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./file-import.component.scss']
 })
 export class FileImportComponent implements OnInit, OnDestroy {
-  checkboxAutoRate: boolean = false;
+  checkboxAutoRate: boolean = true;
   selectedUploadType: string = ''; // Standard-Upload-Typ
   fileName = '';
   file: File | null = null;
@@ -18,6 +19,7 @@ export class FileImportComponent implements OnInit, OnDestroy {
 
   constructor(
     private fileImportService: FileImportService,
+    private transactionImportService: TransactionImportService,
     private snackBar: MatSnackBar) {}
 
 
@@ -61,6 +63,19 @@ export class FileImportComponent implements OnInit, OnDestroy {
     }
   }
 
+  importTrades(){
+    this.transactionImportService.executeImportTransactions().subscribe({
+      next: (response) => {
+        console.log('Upload success:', response);
+        this.onImportTradesSuccess();
+      },
+      error: (error) => {
+        console.error('Upload error', error);
+        this.onImportTradesFailure();
+      }
+    })
+  }
+
   onUploadSuccess() {
     this.snackBar.open('Upload erfolgreich!', 'OK', {
       duration: 3000, // Anzeigedauer der Meldung in Millisekunden (3 Sekunden)
@@ -77,8 +92,15 @@ export class FileImportComponent implements OnInit, OnDestroy {
     });
   }
 
-  importTrades(){
-    this.snackBar.open('importing Trades clicked', 'OK', {
+  onImportTradesSuccess(){
+    this.snackBar.open('importing successfully', 'OK', {
+      duration: 3000,
+      verticalPosition: 'top'
+    });
+  }
+
+  onImportTradesFailure(){
+    this.snackBar.open('importing failed', 'OK', {
       duration: 3000,
       verticalPosition: 'top'
     });

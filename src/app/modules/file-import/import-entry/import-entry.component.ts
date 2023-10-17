@@ -1,7 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { TransactionImport } from 'src/app/modules/models/transaction-import.model';
-import { FileImportService } from '../../services/file-import.service';
+import { TransactionImportService } from '../../services/transaction-import.service';
 import { Subscription } from 'rxjs';
+import { FileImportService } from '../../services/file-import.service';
 
 
 @Component({
@@ -13,7 +14,9 @@ export class ImportEntryComponent implements OnInit, OnDestroy {
   importTransactions: TransactionImport[] = [];
   private importEntrySubscription: Subscription = new Subscription();
 
-  constructor(private fileImportService: FileImportService) {}
+  constructor(
+    private transactionImportService: TransactionImportService,
+    private fileImportService: FileImportService) {}
 
   displayedColumns = ['Date', 'Type', 'Exchange', 'In', 'Out'];
 
@@ -29,7 +32,7 @@ export class ImportEntryComponent implements OnInit, OnDestroy {
   }
 
   private loadImportTransactions() {
-    this.importEntrySubscription = this.fileImportService.getImportTransactions().subscribe({
+    this.importEntrySubscription = this.transactionImportService.getImportTransactions().subscribe({
       next: (response) => {
         this.importTransactions = response;
         console.log("Import Transactions: ", this.importTransactions);
