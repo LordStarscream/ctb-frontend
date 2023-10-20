@@ -45,7 +45,7 @@ export class ImportEntryComponent implements OnInit, OnDestroy {
   }
 
   refreshContent(){
-    this.importEntrySubscription.unsubscribe(); // Beenden Sie das vorherige Abonnement
+    this.importEntrySubscription.unsubscribe();
     this.loadImportTransactions();
   }
 }

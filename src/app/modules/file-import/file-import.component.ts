@@ -97,6 +97,7 @@ export class FileImportComponent implements OnInit, OnDestroy {
       duration: 3000,
       verticalPosition: 'top'
     });
+    this.fileImportService.contantUpdate.emit();
   }
 
   onImportTradesFailure(){
