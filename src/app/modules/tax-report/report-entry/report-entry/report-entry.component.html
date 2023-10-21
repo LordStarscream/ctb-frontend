@@ -1,0 +1,46 @@
+<h1>Import Entries</h1>
+<table mat-table [dataSource]="reportEntries" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="BuyDate">
+    <th mat-header-cell *matHeaderCellDef> BuyDate </th>
+    <td mat-cell *matCellDef="let row"> {{ row.date | date: 'yyy-MM-dd HH:mm:ss' }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="SellDate">
+    <th mat-header-cell *matHeaderCellDef> SellDate </th>
+    <td mat-cell *matCellDef="let row"> {{ row.date | date: 'yyy-MM-dd HH:mm:ss' }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Currency">
+    <th mat-header-cell *matHeaderCellDef> Currency </th>
+    <td mat-cell *matCellDef="let row"> {{ row.type }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Ammount">
+    <th mat-header-cell *matHeaderCellDef> Ammount </th>
+    <td mat-cell *matCellDef="let row"> {{ row.exchange }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Holding">
+    <th mat-header-cell *matHeaderCellDef> Holding s/l</th>
+    <td mat-cell *matCellDef="let row"> {{ row.exchange }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="InExchange">
+    <th mat-header-cell *matHeaderCellDef> InExchange </th>
+    <td mat-cell *matCellDef="let row"> {{ row.inValue }} {{ row.inCurrency }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="OutExchange">
+    <th mat-header-cell *matHeaderCellDef> OutExchange </th>
+    <td mat-cell *matCellDef="let row"> {{ row.outValue }} {{ row.outCurrency}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="Profit">
+    <th mat-header-cell *matHeaderCellDef> Profit </th>
+    <td mat-cell *matCellDef="let row"> {{ row.outValue }} {{ row.outCurrency}}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr> <!--display which columns-->
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr><!-- finaly display data from the row-->
+</table>

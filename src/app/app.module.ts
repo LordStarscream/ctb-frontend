@@ -16,10 +16,14 @@ import { MatTableModule } from '@angular/material/table';
 import { DefaultModule } from './layouts/default/default.module';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { TaxReportComponent } from './modules/tax-report/tax-report.component';
+import { ReportEntryComponent } from './modules/tax-report/report-entry/report-entry/report-entry.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TaxReportComponent,
+    ReportEntryComponent
   ],
   imports: [
     DefaultModule,

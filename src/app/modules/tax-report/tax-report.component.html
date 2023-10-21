@@ -1,0 +1,12 @@
+<div>
+  <label for="Reports">Report:</label>
+  <select id="reportYear" [(ngModel)]="selectedReport">
+    <option *ngFor="let report of reports" [value]="report">{{ report }}</option>
+  </select>
+</div>
+
+<div class="createReport">
+  <button mat-raised-button color="primary" (click)="createReport()">Create Report</button>
+</div>
+
+<app-report-entry></app-report-entry>
