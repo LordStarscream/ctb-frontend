@@ -10,7 +10,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class TaxReportComponent implements OnInit, OnDestroy {
   selectedReport: any;
-  reports: any[] = [];
   private reportSubscription: Subscription = new Subscription();
 
   constructor(
@@ -18,22 +17,10 @@ export class TaxReportComponent implements OnInit, OnDestroy {
     private snackBar: MatSnackBar) {}
 
   ngOnInit(): void {
-    this.reportSubscription = this.reportService.getAvailableReportYears().subscribe({
-      next: (response) => {
-        this.reports = response;
-      },
-      error: (error) => {
-        console.error('Fehler beim Abruf der report Years', error);
-      },
-      complete: () => {}
-    });
-  }
+  };
 
   ngOnDestroy(): void {
-    if(this.reportSubscription){
-      this.reportSubscription.unsubscribe();
-    }
-  }
+  };
 
   createReport() {
     console.log("In CreateReport() of Component")

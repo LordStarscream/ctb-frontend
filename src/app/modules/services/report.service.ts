@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { environment } from 'src/environment';
+import { ReportOverview } from '../crypto-hoddl/crypto.model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,9 +13,14 @@ export class ReportService {
 
   constructor(private http: HttpClient) { }
 
-  getAvailableReportYears(): Observable<String[]> {
+  getAvailableReportYears(): Observable<any[]> {
     const url = `${this.apiUrl}/report/availableYears`;
-    return  this.http.get<String[]>(url);
+    return  this.http.get<any[]>(url);
+  }
+
+  getAvailableReports(): Observable<ReportOverview[]> {
+    const url = `${this.apiUrl}/report/reports`;
+    return  this.http.get<ReportOverview[]>(url);
   }
 
   generateReport(year: any): Observable<any> {

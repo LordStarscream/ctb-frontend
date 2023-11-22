@@ -14,6 +14,12 @@ export interface Wallet {
   FiatValue:string,
 }
 
+export interface ReportOverview {
+  Id: number,
+  Year: number,
+  Account: any
+}
+
 export interface ReportEntry {
   Value: number,
   Asset: string,
