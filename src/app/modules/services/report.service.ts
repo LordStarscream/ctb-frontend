@@ -23,12 +23,24 @@ export class ReportService {
     return  this.http.get<ReportOverview[]>(url);
   }
 
-  generateReport(year: any): Observable<any> {
-    const url = `${this.apiUrl}/report/createReport`;
+  generateReport(): Observable<any> {
+    const url = `${this.apiUrl}/report/updateReports`;
     const formData = new FormData();
-    formData.append('year', year);
-
     const headers = new HttpHeaders();
     return this.http.post<any>(url, formData, { headers });
+  }
+
+  generateIncomeReport(reportId: number): Observable<Blob> {
+    return this.http.get(`${this.apiUrl}/report/incomeReport/${reportId}`,{ responseType: 'blob',});
+  }
+
+  generateDonationReport(reportId: number): Observable<Blob> {
+    const url = `${this.apiUrl}/report/donationReport`;
+    return this.http.get(`${url}/${reportId}`, { responseType: 'blob' });
+  }
+
+  generateGainReport(reportId: number): Observable<any> {
+    const url = `${this.apiUrl}/report/gainReport`;
+    return this.http.get(`${url}/${reportId}`, { responseType: 'blob' });
   }
 }

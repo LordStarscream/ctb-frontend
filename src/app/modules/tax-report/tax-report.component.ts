@@ -24,7 +24,7 @@ export class TaxReportComponent implements OnInit, OnDestroy {
 
   createReport() {
     console.log("In CreateReport() of Component")
-    this.reportService.generateReport(this.selectedReport).subscribe({
+    this.reportService.generateReport().subscribe({
       next: (response) => {
         console.log('Upload success:', response);
         this.onCreateSuccess();
