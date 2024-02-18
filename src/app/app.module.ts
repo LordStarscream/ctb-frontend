@@ -18,12 +18,16 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { TaxReportComponent } from './modules/tax-report/tax-report.component';
 import { ReportEntryComponent } from './modules/tax-report/report-entry/report-entry/report-entry.component';
+import { JournalComponent } from './modules/journal/journal.component';
+import { JournalEntryComponent } from './modules/journal/journal-entry/journal-entry.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TaxReportComponent,
-    ReportEntryComponent
+    ReportEntryComponent,
+    JournalComponent,
+    JournalEntryComponent
   ],
   imports: [
     DefaultModule,

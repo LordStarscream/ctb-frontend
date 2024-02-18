@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DefaultComponent } from './layouts/default/default.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { TaxReportComponent } from './modules/tax-report/tax-report.component';
+import { JournalComponent } from './modules/journal/journal.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,10 @@ const routes: Routes = [
       {
         path: '',
         component: DashboardComponent
+      },
+      {
+        path: 'journal',
+        component: JournalComponent
       },
       {
         path: 'hoddl',

@@ -42,3 +42,16 @@
   z-index: 2; /* Hinzugefügter Wert für die Stapelreihenfolge, höher als das Bild */
   pointer-events: auto; /* Aktiviert Klicks für das Element */
 }
+
+.tags {
+  margin-top: 5px;
+}
+
+.tag {
+  display: inline-block;
+  margin-right: 5px;
+  padding: 3px 8px;
+  background-color: #eee;
+  border-radius: 5px;
+  cursor: pointer;
+}
