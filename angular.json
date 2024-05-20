@@ -31,9 +31,12 @@
             ],
             "styles": [
               "@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "node_modules/handsontable/dist/handsontable.full.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/handsontable/dist/handsontable.full.js"
+            ]
           },
           "configurations": {
             "production": {

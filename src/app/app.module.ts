@@ -20,6 +20,12 @@ import { TaxReportComponent } from './modules/tax-report/tax-report.component';
 import { ReportEntryComponent } from './modules/tax-report/report-entry/report-entry/report-entry.component';
 import { JournalComponent } from './modules/journal/journal.component';
 import { JournalEntryComponent } from './modules/journal/journal-entry/journal-entry.component';
+import { AccountComponent } from './modules/account/account.component';
+import { HotTableModule } from '@handsontable/angular';
+import { registerAllModules } from 'handsontable/registry';
+
+// register Handsontable's modules
+registerAllModules();
 
 @NgModule({
   declarations: [
@@ -27,7 +33,8 @@ import { JournalEntryComponent } from './modules/journal/journal-entry/journal-e
     TaxReportComponent,
     ReportEntryComponent,
     JournalComponent,
-    JournalEntryComponent
+    JournalEntryComponent,
+    AccountComponent
   ],
   imports: [
     DefaultModule,
@@ -45,7 +52,8 @@ import { JournalEntryComponent } from './modules/journal/journal-entry/journal-e
     FormsModule,
     MatTableModule,
     MatSnackBarModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    HotTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

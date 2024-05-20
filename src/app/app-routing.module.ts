@@ -6,6 +6,7 @@ import { DefaultComponent } from './layouts/default/default.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { TaxReportComponent } from './modules/tax-report/tax-report.component';
 import { JournalComponent } from './modules/journal/journal.component';
+import { AccountComponent } from './modules/account/account.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,10 @@ const routes: Routes = [
       {
         path: 'journal',
         component: JournalComponent
+      },
+      {
+        path: 'account',
+        component: AccountComponent
       },
       {
         path: 'hoddl',
