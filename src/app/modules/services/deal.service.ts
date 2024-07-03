@@ -1,12 +1,13 @@
 import { environment } from './../../../environment';
 import { Injectable, EventEmitter } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
+import { Deal } from '../models/deal.model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class FileImportService {
+export class DealService {
 
   contantUpdate = new EventEmitter<void>();
 
@@ -14,18 +15,14 @@ export class FileImportService {
 
   constructor(private http: HttpClient) { }
 
-  getFileImportTypes(): Observable<string[]>{
-    const url = `${this.apiUrl}/file/importTypes`;
-    return this.http.get<string[]>(url);
+  getDeals(accountId: number): Observable<Deal[]>{
+    const url = `${this.apiUrl}/cfg/transactions/${accountId}`;
+    return this.http.get<Deal[]>(url);
   }
 
-  uploadFile(file: File, importFormat: string): Observable<any>{
-    const formData = new FormData();
-    formData.append('file', file);
-    formData.append('importFormat', importFormat);
-
-    const headers = new HttpHeaders();
-
-    return this.http.post(`${this.apiUrl}/file/import`, formData, { headers });
+  saveDeals(deals: Deal[]): Observable<void>{
+    const url = `${this.apiUrl}/cfd/transactions`;
+    return this.http.post<void>(url, deals);
   }
+
 }
