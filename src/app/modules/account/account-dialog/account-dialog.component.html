@@ -1,0 +1,39 @@
+<h2 mat-dialog-title>Neuen Account erstellen</h2>
+<mat-dialog-content>
+  <form [formGroup]="accountForm">
+    <mat-form-field>
+      <mat-label>Typ</mat-label>
+      <mat-select formControlName="type">
+        <mat-option *ngFor="let type of types" [value]="type">{{ type }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Neuen Typ hinzufügen</mat-label>
+      <input matInput formControlName="newType">
+      <button mat-button (click)="addNewType()">Hinzufügen</button>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Information</mat-label>
+      <input matInput formControlName="information">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Account Currency</mat-label>
+      <mat-select formControlName="referenceCurrency">
+        <mat-option *ngFor="let currency of currencies" [value]="currency">{{ currency.ticker }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Neue Währung hinzufügen</mat-label>
+      <input matInput formControlName="newCurrency">
+      <button mat-button (click)="addNewCurrency()">Hinzufügen</button>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Abbrechen</button>
+  <button mat-button (click)="onSave()" cdkFocusInitial>Speichern</button>
+</mat-dialog-actions>

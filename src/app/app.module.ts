@@ -24,6 +24,13 @@ import { AccountComponent } from './modules/account/accountDeals/account.compone
 import { HotTableModule } from '@handsontable/angular';
 import { registerAllModules } from 'handsontable/registry';
 import { AccountListComponent } from './modules/account/accountlist/accountlist.component';
+import { AccountDialogComponent } from './modules/account/account-dialog/account-dialog.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatOptionModule } from '@angular/material/core';
 
 // register Handsontable's modules
 registerAllModules();
@@ -36,7 +43,8 @@ registerAllModules();
     JournalComponent,
     JournalEntryComponent,
     AccountComponent,
-    AccountListComponent
+    AccountListComponent,
+    AccountDialogComponent
   ],
   imports: [
     DefaultModule,
@@ -55,7 +63,13 @@ registerAllModules();
     MatTableModule,
     MatSnackBarModule,
     MatCheckboxModule,
-    HotTableModule
+    HotTableModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatSelectModule,
+    MatOptionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

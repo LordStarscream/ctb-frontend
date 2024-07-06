@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Account } from '../../models/account.model';
 import { AccountService } from '../../services/account.service';
+import { AccountDialogComponent } from '../account-dialog/account-dialog.component';
 
 @Component({
   selector: 'accountlist',
@@ -11,7 +13,7 @@ export class AccountListComponent implements OnInit {
   accounts: Account[] = [];
   selectedAccount: Account | null = null;
 
-  constructor(private accountService: AccountService) {}
+  constructor(private accountService: AccountService, public dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.loadAccounts();
@@ -25,6 +27,12 @@ export class AccountListComponent implements OnInit {
 
   selectAccount(account: Account) {
     this.selectedAccount = account;
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(AccountDialogComponent, {
+      width: '250px'
+    });
   }
 
   createAccount() {
