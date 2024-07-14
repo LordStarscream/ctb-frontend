@@ -22,8 +22,8 @@ export class AccountService {
     return this.http.post<Account>(url, account);
   }
 
-  getAccountTypes(): Observable<String[]> {
+  getAccountTypes(): Observable<string[]> {
     const url = `${this.apiUrl}/accountTypes`;
-    return this.http.get<String[]>(url);
+    return this.http.get<string[]>(url);
   }
 }

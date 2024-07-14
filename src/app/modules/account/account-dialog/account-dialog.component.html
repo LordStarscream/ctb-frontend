@@ -3,33 +3,38 @@
   <form [formGroup]="accountForm">
     <mat-form-field>
       <mat-label>Typ</mat-label>
-      <mat-select formControlName="type">
-        <mat-option *ngFor="let type of types" [value]="type">{{ type }}</mat-option>
-      </mat-select>
+      <input type="text" matInput formControlName="type" [matAutocomplete]="autoType" (keydown.enter)="$event.preventDefault(); addNewType()">
+      <mat-autocomplete #autoType="matAutocomplete" (optionSelected)="onTypeSelected($event)">
+        <mat-option *ngFor="let type of filteredTypes | async" [value]="type">
+          {{ type }}
+        </mat-option>
+        <mat-option *ngIf="showAddTypeOption" [value]="newType" (click)="addNewType()">
+          Neue Type: "{{ newType }}"
+        </mat-option>
+      </mat-autocomplete>
     </mat-form-field>
-    <mat-form-field>
-      <mat-label>Neuen Typ hinzufügen</mat-label>
-      <input matInput formControlName="newType">
-      <button mat-button (click)="addNewType()">Hinzufügen</button>
-    </mat-form-field>
+
     <mat-form-field>
       <mat-label>Name</mat-label>
       <input matInput formControlName="name">
     </mat-form-field>
+
     <mat-form-field>
       <mat-label>Information</mat-label>
       <input matInput formControlName="information">
     </mat-form-field>
+
     <mat-form-field>
       <mat-label>Account Currency</mat-label>
-      <mat-select formControlName="referenceCurrency">
-        <mat-option *ngFor="let currency of currencies" [value]="currency">{{ currency.ticker }}</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Neue Währung hinzufügen</mat-label>
-      <input matInput formControlName="newCurrency">
-      <button mat-button (click)="addNewCurrency()">Hinzufügen</button>
+      <input type="text" matInput formControlName="referenceCurrency" [matAutocomplete]="autoCurrency" (keydown.enter)="$event.preventDefault(); addNewCurrency()">
+      <mat-autocomplete #autoCurrency="matAutocomplete" (optionSelected)="onCurrencySelected($event)">
+        <mat-option *ngFor="let currency of filteredCurrencies | async" [value]="currency.name">
+          {{ currency.name }}
+        </mat-option>
+        <mat-option *ngIf="showAddCurrencyOption" [value]="newCurrency" (click)="addNewCurrency()">
+          Neue Währung: "{{ newCurrency }}"
+        </mat-option>
+      </mat-autocomplete>
     </mat-form-field>
   </form>
 </mat-dialog-content>
